@@ -2,7 +2,8 @@
   
   background-color: #184e8e;
   font-family: "Source Sans Pro", sans-serif;
-  background-image: url();
+  
+  
 }
 
 @media (min-width: 768px) {
@@ -180,25 +181,26 @@
   font-weight: 300;
 }
 
-.header-blue .phone-holder {
+.header-blue .holder {
   text-align: right;
+  margin: 4rem 0 0 7rem;
 }
 
-.header-blue div.iphone-mockup {
+.header-blue div.mockup {
   position: relative;
   max-width: 300px;
   margin: 20px;
   display: inline-block;
 }
 
-.header-blue .iphone-mockup img.device {
+.header-blue .mockup img.device {
   width: 100%;
   height: auto;
 }
 
-.header-blue .iphone-mockup .screen {
+.header-blue .mockup .screen{
   position: absolute;
-  width: 88%;
+  width: 98%;
   height: 77%;
   top: 12%;
   border-radius: 2px;
@@ -211,7 +213,7 @@
   background-position: center;
 }
 
-.header-blue .iphone-mockup .screen:before {
+.header-blue .mockup .screen:before {
   content: "";
   background-color: #fff;
   position: absolute;
