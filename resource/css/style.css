@@ -1,6 +1,9 @@
 .header-blue {
+
   background-color: #184e8e;
   font-family: "Source Sans Pro", sans-serif;
+  
+  
 }
 
 @media (min-width: 768px) {
@@ -195,7 +198,9 @@
   height: auto;
 }
 
-.header-blue .mockup .screen {
+
+.header-blue .mockup .screen{
+
   position: absolute;
   width: 98%;
   height: 77%;
@@ -240,5 +245,8 @@
 }
 
 .card {
+
+
   width: 12rem;
+
 }
