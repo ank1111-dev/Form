@@ -1,23 +1,66 @@
-const labelDate = document.getElementById("date");
+//Validate name
 
-let currentAccount;
-const now = new Date();
-const options = {
-  hour: "numeric",
-  minute: "numeric",
-  day: "numeric",
-  month: "numeric",
-  year: "numeric",
+function validateName(){
+  let username= document.getElementById('name');
+   
+  if (username.value.length > 8 || username.value == "" ) {
+
+    alert("Input invalid")
+  } else {
+    alert("Success")
+  }
+}
+let submitButton = document.getElementById("submitBTN");
+submitButton.addEventListener("click", validateName);
+
+
+//Description
+
+function displayDescription() {
+ 
+
+  let descriptionBox = document.getElementById("description");
+
+  if (descriptionBox.value === "" || descriptionBox.value.length > 15) {
+    alert('Please write your description!');
+  } else {
+    alert('Success');
+  }
+}
+
+submitButton.addEventListener("click", displayDescription);
+
+//Validate assigned to 
+
+function validateform(){  
+  let assignedTo = document.getElementById('assignedTo');   
+
+  if (assignedTo.value.length > 8 || assignedTo.value == "" ) {  
+    alert("Name can't be blank");  
+    
+  } else  {  
+    alert("Success");  
+  
+  }  
+}  
+
+submitButton.addEventListener('click',  validateform);
+
+
+//Due date:
+function dueDates () {
+  var today = new Date();
+  var day = today.getDate();
+  var month = today.getMonth()+1;
+  let dueDate = document.getElementById("dueDate");
+
+  if ( dueDate === " " && dueDate  < today) {
+
+    alert ("Select correct Due date");
+  } else{
+    alert("Success");
+  }
+
 };
 
-//labelDate.textContent = new Intl.DateTimeFormat(
-//currentAccount.locale,
-//options
-//).format(now);
-
-const day = `${now.getDate()}`.padStart(2, 0);
-const month = `${now.getMonth() + 1}`.padStart(2, 0);
-const year = now.getFullYear();
-//const hour = `${now.getMinutes()}`.padStart(2, 0);
-//const min = `${now.getDate()}`.padStart(2, 0);
-labelDate.textContent = `Date: ${day}/${month}/${year}`;
+submitButton .addEventListener('click',  dueDates);
