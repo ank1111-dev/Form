@@ -2,7 +2,7 @@ const form = document.getElementById('form');
 const username = document.getElementById('name');
 const descriptionBox = document.getElementById('description');
 const assignedTo = document.getElementById('assignedTo');
-const dueDate = document.getElementById('due date');
+const dueDate = document.getElementById('duedate').value;
 const errorElement = document.getElementById('error');
 const validateStatus = document.getElementById('status');
 
@@ -12,6 +12,13 @@ const validateStatus = document.getElementById('status');
 // var yyyy = today.getFullYear();
 // let dateString = dd + '/'+ mm + '/' + yyyy;
 // console.log(dateString);
+
+//Displaying Due Date 
+
+let ToDate = new Date();
+inpDate = new Date (dueDate);
+console.log(ToDate);
+console.log(inpDate);
 
 form.addEventListener('submit',function(e) { 
 
@@ -30,9 +37,9 @@ form.addEventListener('submit',function(e) {
   }
 
 
-  if ( dueDate === "" && dueDate < dateString){
-
-    messages.push('Select correct date')
+  if (inpDate.toDateString() < ToDate.toDateString()) {
+  
+    messages.push('The Date must be Bigger or Equal to today date')
 
   }
 
