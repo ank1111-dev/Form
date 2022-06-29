@@ -245,8 +245,10 @@
 }
 
 .card {
-
-
   width: 12rem;
+}
 
+#error{
+  color: red;
+  padding-left:  15px;
 }
