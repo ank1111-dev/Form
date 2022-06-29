@@ -47,3 +47,19 @@ form.addEventListener('submit',function(e) {
   }
 
 });
+
+//Displaying curret date on page
+function currentDate () {
+  const el = document.getElementById('date');
+  const current= new Date();
+  const day =  current.getDate();
+  const month = current.getMonth()+1;
+  const year = current.getFullYear();
+  
+  // returns the final date with backslash (/) separator
+  const date = `${day}/${month}/${year}`;
+  el.textContent = date;
+
+}
+
+currentDate();
