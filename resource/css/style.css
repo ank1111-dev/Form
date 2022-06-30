@@ -151,6 +151,7 @@
 .header-blue .hero {
   margin-top: 20px;
   text-align: center;
+  
 }
 
 @media (min-width: 768px) {
@@ -247,4 +248,19 @@
 
 .card {
   width: 12rem;
+}
+
+#error{
+  color: red;
+  padding-left:  15px;
+
+}
+
+#date{
+  font-size: 25px;
+  padding-right: 80px;
+}
+
+.p1{
+  font-size: 25px;
 }
