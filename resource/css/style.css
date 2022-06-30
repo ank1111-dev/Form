@@ -1,9 +1,6 @@
 .header-blue {
-
   background-color: #184e8e;
   font-family: "Source Sans Pro", sans-serif;
-  
-  
 }
 
 @media (min-width: 768px) {
@@ -60,7 +57,13 @@
   color: #fff;
 }
 
-.header-blue .navbar .navbar-toggler {
+.header-blue .navbar .navbar-collapse .balance-date {
+  color: #eceaea;
+  margin-right: 0.5rem;
+  text-decoration: none;
+}
+
+.header-blue .navbar .navbar-collapse .header-blue .navbar .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -198,9 +201,7 @@
   height: auto;
 }
 
-
-.header-blue .mockup .screen{
-
+.header-blue .mockup .screen {
   position: absolute;
   width: 98%;
   height: 77%;
@@ -245,8 +246,5 @@
 }
 
 .card {
-
-
   width: 12rem;
-
 }
