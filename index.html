@@ -85,7 +85,7 @@
                             <div class="mb-3">                           
                               <label  class="form-label">Name</label>
                               <input id="name" type="text" class="form-control" />
-                              <small></small>
+                              <small id="error-name"></small>
                             </div>
                           </div>
                           <div class="col-12">
@@ -96,7 +96,7 @@
                                 id="description"
                                 rows="3"
                               ></textarea>
-                              <small></small>
+                              <small id="error-description"></small>
                             </div>
                           </div>
                         </div>
@@ -105,7 +105,7 @@
                             <div class="mb-3">
                               <label class="form-label">Assigned to</label>
                               <input id= "assignedTo" type="text" class="form-control" />
-                              <small></small>
+                              <small id="error-assignee"></small>
                             </div>
                           </div>
                         </div>
@@ -116,7 +116,7 @@
                                 >Due Date</label
                               >
                               <input type="date" id="duedate" name="due date" />
-                              <small></small>
+                              <small id="error-ddate"></small>
                             </div>
                           </div>
                         </div>
@@ -137,6 +137,7 @@
                                 <option value="3">REVIEW</option>
                                 <option value="4">DONE</option>
                               </select>
+                              <small id="error-status"></small>
                             </div>
                           </div>
                         </div>

@@ -249,11 +249,6 @@
   width: 12rem;
 }
 
-#error{
-  color: red;
-  padding-left:  15px;
-}
-
 #date{
   font-size: 25px;
   padding-right: 80px;
@@ -261,4 +256,8 @@
 
 .p1{
   font-size: 25px;
+}
+
+small{
+  color: red;
 }
