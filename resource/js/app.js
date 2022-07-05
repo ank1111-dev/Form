@@ -108,7 +108,7 @@ const tasksList = document.getElementById('tasksList');
 
 tasksList.addEventListener('click', (event) => { 
 
-    if (event.target.classList.contains('done-button')) {
+    if(event.target.classList.contains('done-button')) {
       // Get the parent task
         const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
         

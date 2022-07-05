@@ -49,7 +49,7 @@ class TaskManager {
 
     this.tasks.push(task);
     console.log(
-      `$(task.id) \n $(task.username)\n $(task.descriptionBox)\n $(task.assignedTo)\n $(task.dueDate) \n $(task.validateStatus)`
+      `${task.id} \n ${task.username}\n ${task.descriptionBox}\n ${task.assignedTo}\n ${task.dueDate} \n ${task.validateStatus}`
     );
     return task;
   }
