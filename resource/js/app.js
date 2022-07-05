@@ -99,30 +99,40 @@ function toAddTasks() {
        
 }
 
-// Updating the task to done 
-const tasksList = document.getElementById('tasksList');
+/// Mark as Done
 
-// function closeButton() {
-//   document.getElementById('Done').style.display ="none";l
-// }
+let todolist = document.querySelector("#todo");
+let review = document.querySelector("#review");
+let inprogress = document.querySelector("#inprog");
+let done = document.querySelector("#done");
 
-tasksList.addEventListener('click', (event) => { 
+// click events!
 
-    if (event.target.classList.contains('done-button')) {
-      // Get the parent task
-        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
-        
-        // Get the task id of the parent task
-        const taskId = Number(parentTask.dataset.taskId);
-        console.log(taskId)
-        //) Find the task that matches the parent task id
-        const task = taskManager.getTaskById(taskId);
-        
-         console.log(taskId)
-         console.log(event.target)
-        // Change the task status
-        task.validateStatus = 'DONE';   
-        taskManager.render();    
-             
-      }     
-    });     
+todolist.addEventListener("click", updateStatus);
+review.addEventListener("click", updateStatus);
+inprogress.addEventListener("click", updateStatus);
+done.addEventListener("click", updateStatus);
+
+//Function to hide the mark as done button
+function closeButton() {
+
+  document.getElementById("Done").style.display = "none";
+}
+
+function updateStatus(event) {
+  
+  if (event.target.classList.contains("done-button")) {
+    const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
+    console.log(parentTask);
+    const taskId = Number(parentTask.dataset.taskId);
+    console.log(taskId);
+    const task = taskManager.getTaskById(taskId);
+    // console.log(task);
+    task.validateStatus = "Done";    
+    // closeButton();
+    taskManager.render();
+    closeButton();
+    
+  }
+}
+
