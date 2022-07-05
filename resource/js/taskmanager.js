@@ -9,9 +9,10 @@ const createTaskHtml = (
   validateStatus
 ) => {
   const newForm = ` 
-  <div class="card" style="width: 20rem; margin: 10%; box-shadow: 4px 4px ;" data-task-id=${id}>
+  <div class="card text-left mt-3" style="width: 18rem; box-shadow: 4px 4px ;" data-task-id=${id}>
 <div class="card-body">
   <h5 class="card-title">Name:  ${username}</h5>
+<<<<<<< HEAD
   <br>
   <p class="card-subtitle mb-2">Description:  ${descriptionBox}</p>
   <br>
@@ -27,6 +28,18 @@ const createTaskHtml = (
     </div>
     <div class="col">
       <a href="#" class="btn btn-success padding-right="100px" Update-button ml-5" id="Update">Update</a> /*create Id and use this button*/
+=======
+    <p class="card-subtitle mb-2 mt-1">Description:  ${descriptionBox}</p>
+     <h6 class="card-subtitle mb-2 mt-1">Due Date:  ${dueDate}</h6>
+    <h6 class="card-subtitle mb-2 mt-1" id="assignedToInput">Assignee:  ${assignedTo}</h6>
+    <h6 class="card-subtitle mb-2 mt-1">Status:  ${validateStatus}</h6>
+    <div class="row">
+    <div class="col mt-3">
+      <a href="#" class="btn btn-danger delete-button ml-3">Delete</a>
+    </div>
+    <div class="col mt-3">
+     <a href="#" class="btn btn-success done-button " id="Done">Mark as Done</a>
+>>>>>>> 85fc0171baed845c4ebd9c9a99917599fdfd3b1d
     </div>
   </div>
 </div>
