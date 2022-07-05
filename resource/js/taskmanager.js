@@ -21,7 +21,7 @@ const createTaskHtml = (
       <a href="#" class="btn btn-danger delete-button ml-3">Delete</a>
     </div>
     <div class="col mt-3">
-      <a href="#" class="btn btn-success padding-right="100px" Update-button ml-5">Mark as Done</a>
+     <a href="#" class="btn btn-success done-button " id="Done">Mark as Done</a>
     </div>
   </div>
 </div>
