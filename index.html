@@ -24,9 +24,14 @@
     <!-- Navigation bar -->
     <div>
       <div class="header-blue">
-        <p class="p1 text-right pr-5 pt-4" style="color:black" padding-top="150px">Date: <span  id="date" ></span></p>
-  
-        
+        <p
+          class="p1 text-right pr-5 pt-4"
+          style="color: rgb(53, 129, 113)"
+          padding-top="150px"
+        >
+          Date: <span id="date"></span>
+        </p>
+
         <!-- Content header  -->
         <div class="container hero mt-3">
           <div class="row">
@@ -34,11 +39,18 @@
               <h1 class="font-weight-bold display-4" style="color: black">
                 Task Schedular
               </h1>
-              
+
               <!-- Button HTML (to Trigger Modal) -->
-              <a href="#myModal" role="button" class="btn btn-lg mt-4" style="background-color: rgb(187, 118, 87)" data-bs-toggle="modal"><span style="color:black">Create Task</span></a>
+              <a
+                href="#myModal"
+                role="button"
+                class="btn btn-lg mt-4"
+                style="background-color: rgb(187, 118, 87)"
+                data-bs-toggle="modal"
+                ><span style="color: black">Create Task</span></a
+              >
               <!-- Modal Header -->
-              
+
               <div id="myModal" class="modal fade" tabindex="-1">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -51,14 +63,18 @@
                       ></button>
                     </div>
 
-                  <!-- Form -->                
-                  <form id="form">                                                                 
-                    <div class="modal-body">
-                       <div class="row">
+                    <!-- Form -->
+                    <form id="form">
+                      <div class="modal-body">
+                        <div class="row">
                           <div class="col-6">
-                            <div class="mb-3">                           
-                              <label  class="form-label">Name</label>
-                              <input id="name" type="text" class="form-control" />
+                            <div class="mb-3">
+                              <label class="form-label">Name</label>
+                              <input
+                                id="name"
+                                type="text"
+                                class="form-control"
+                              />
                               <small id="error-name"></small>
                             </div>
                           </div>
@@ -78,14 +94,18 @@
                           <div class="col-12">
                             <div class="mb-3">
                               <label class="form-label">Assigned to</label>
-                              <input id= "assignedTo" type="text" class="form-control" />
+                              <input
+                                id="assignedTo"
+                                type="text"
+                                class="form-control"
+                              />
                               <small id="error-assignee"></small>
                             </div>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-12">
-                            <div class="mb-3 ">
+                            <div class="mb-3">
                               <label class="form-label" for="due date"
                                 >Due Date</label
                               >
@@ -96,7 +116,7 @@
                         </div>
                         <div class="row">
                           <div class="col-12">
-                            <div class="mb-3 ">
+                            <div class="mb-3">
                               <label class="form-label" for="status"
                                 >Status</label
                               >
@@ -114,45 +134,93 @@
                               <small id="error-status"></small>
                             </div>
                           </div>
-                        </div>                                       
-                    
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-outline-danger"
-                        data-bs-dismiss="modal"
-                      >
-                        Reset
-                      </button>
-                      <button id ="submitBTN" type="submit" class="btn btn-outline-primary">Submit</button>
-                    </div>                       
-                  </form> 
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-outline-danger"
+                          data-bs-dismiss="modal"
+                        >
+                          Reset
+                        </button>
+                        <button
+                          id="submitBTN"
+                          type="submit"
+                          class="btn btn-outline-primary"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
-            </div>                      
+            </div>
           </div>
         </div>
-      </div>     
-  </div>
-
-  <!-- Display the task card in list form  -->
-  <div class="row text-center">
-    <div class=" col-lg-12  border">
-    <h2 class="mt-3" style= "padding-left: 100px ;">Task</h2>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12 h-100">   
-       <ul class="list-group d-inline-block" id="tasksList" ></ul>
-    </div>
-  </div>
 
-    <script src="./resource/js/taskmanager.js" ></script>
+    <!-- Display the task card in list form  -->
+    <div class="row text-center">
+      <div class="col-lg-12 border">
+        <h2 class="mt-3" style="padding-left: 100px">Task</h2>
+      </div>
+    </div>
+    <!--
+    <div class="row">
+      <div class="col-lg-12 h-100">
+        <ul class="list-group d-inline-block" id="tasksList"></ul>
+      </div>
+    </div>
+    -->
+
+    <div class="container-fluid border" style="border: 4px">
+      <div class="row" id="tasksList">
+        <!--Start of To Do column-->
+        <div class="col-lg-3 border">
+          <div class="col-lg h-100 tasksList">
+            <h3 class="text-info2 text-center">To Do</h3>
+
+            <div class="col" id="to_do_tasks"></div>
+          </div>
+        </div>
+
+        <!--End of To Do column-->
+
+        <!--Start of In-Progress column-->
+        <div class="col-lg-3 border">
+          <div class="col-lg h-100 tasksList text-center">
+            <h3 class="text-info3 text-center">In Progress</h3>
+            <div class="col" id="in_progress_tasks"></div>
+          </div>
+        </div>
+        <!--End of In-Progress column-->
+
+        <!--Start of Review column-->
+        <div class="col-lg-3 border">
+          <div class="col-lg h-100 tasksList">
+            <h3 class="text-info4 text-center">Review</h3>
+            <div class="col" id="review_tasks"></div>
+          </div>
+        </div>
+        <!--End of Review column-->
+
+        <!--Start of Done column-->
+        <div class="col-lg-3 border">
+          <div class="col-lg h-100 tasksList">
+            <h3 class="text-info5 text-center">Done</h3>
+            <div class="col" id="done_tasks"></div>
+          </div>
+        </div>
+        <!--End of Done column-->
+      </div>
+    </div>
+
+    <script src="./resource/js/taskmanager.js"></script>
     <script src="./resource/js/app.js"></script>
-     
-     
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
@@ -161,7 +229,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
   </body>
- <footer>
-  <p>&copy2022 - Ankita, Michele, Mahsa & Vasanti</p>
- </footer>
+  <footer>
+    <p>&copy2022 - Ankita, Michele, Mahsa & Vasanti</p>
+  </footer>
 </html>
