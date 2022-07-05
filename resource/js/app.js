@@ -113,26 +113,22 @@ review.addEventListener("click", updateStatus);
 inprogress.addEventListener("click", updateStatus);
 done.addEventListener("click", updateStatus);
 
-//Function to hide the mark as done button
-function closeButton() {
-
-  document.getElementById("Done").style.display = "none";
-}
+//Function to mark status as done
 
 function updateStatus(event) {
   
   if (event.target.classList.contains("done-button")) {
+
     const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
-    console.log(parentTask);
-    const taskId = Number(parentTask.dataset.taskId);
-    console.log(taskId);
-    const task = taskManager.getTaskById(taskId);
-    // console.log(task);
-    task.validateStatus = "Done";    
-    // closeButton();
-    taskManager.render();
-    closeButton();
     
+    const taskId = Number(parentTask.dataset.taskId);
+    
+    const task = taskManager.getTaskById(taskId);
+    
+    task.validateStatus = "Done";    
+    taskManager.render();
+    
+       
   }
 }
 
