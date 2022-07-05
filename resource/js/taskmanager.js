@@ -13,14 +13,14 @@ const createTaskHtml = (id, username, descriptionBox, assignedTo, dueDate,  vali
   <br>
   <h6 class="card-subtitle mb-2" id="assignedToInput">Assignee:  ${assignedTo}</h6>
   <br>
-  <h6 class="card-subtitle mb-2">Status:  ${validateStatus}</h6>
+  <h6 class="card-subtitle mb-2" id="StatusOutput">Status:  ${validateStatus}</h6>
   <br>
    <div class="row">
     <div class="col">
-      <a href="#" class="btn btn-danger delete-button ml-5">Delete</a>
+      <a href="#" class="btn btn-danger delete-button ml-5">Delete</a> 
     </div>
     <div class="col">
-      <a href="#" class="btn btn-success padding-right="100px" Update-button ml-5">Update</a>
+      <a href="#" class="btn btn-success padding-right="100px" Update-button ml-5" id="Update">Update</a> /*create Id and use this button*/
     </div>
   </div>
 </div>
@@ -69,6 +69,18 @@ class TaskManager{
       }
       
       return objTask;
+
+      //Creating a function to update replace status when click (inside the TaskManager class)
+      
+
+
+      //creating a message/buttom Done after status being up to date
+
+
+
+
+
+
     }
 
     //Displaying Task function
@@ -96,3 +108,9 @@ class TaskManager{
 
    
   }
+
+  //Creating a function to update-botton replace status
+
+  
+
+ 
