@@ -24,26 +24,26 @@
     <!-- Navigation bar -->
     <div>
       <div class="header-blue">
-        <p class="p1 text-right pr-5 pt-4" style="color:rgb(122, 75, 36)">Date: <span  id="date" ></span></p>
+        <p class="p1 text-right pr-5 pt-4" style="color:black" padding-top="150px">Date: <span  id="date" ></span></p>
   
         
         <!-- Content header  -->
         <div class="container hero mt-3">
           <div class="row">
             <div class="col-12 col-lg-6 col-xl-5 offset-xl">
-              <h1 class="font-weight-bold" style="color: black">
+              <h1 class="font-weight-bold display-4" style="color: black">
                 Task Schedular
               </h1>
               
               <!-- Button HTML (to Trigger Modal) -->
-              <a href="#myModal" role="button" class="btn btn-lg" style="background-color: rgb(187, 118, 87)" data-bs-toggle="modal"><span style="color:black">Create Task</span></a>
+              <a href="#myModal" role="button" class="btn btn-lg mt-4" style="background-color: rgb(187, 118, 87)" data-bs-toggle="modal"><span style="color:black">Create Task</span></a>
               <!-- Modal Header -->
               
               <div id="myModal" class="modal fade" tabindex="-1">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title">Planner</h5>
+                      <h5 class="modal-title">To Do List</h5>
                       <button
                         type="button"
                         class="btn-close"
@@ -120,12 +120,12 @@
                     <div class="modal-footer">
                       <button
                         type="button"
-                        class="btn btn-secondary"
+                        class="btn btn-outline-danger"
                         data-bs-dismiss="modal"
                       >
                         Reset
                       </button>
-                      <button id ="submitBTN" type="submit" class="btn btn-primary">Submit</button>
+                      <button id ="submitBTN" type="submit" class="btn btn-outline-primary">Submit</button>
                     </div>                       
                   </form> 
                   </div>
@@ -161,5 +161,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
   </body>
-
+ <footer>
+  <p>&copy2022 - Ankita, Michele, Mahsa & Vasanti</p>
+ </footer>
 </html>

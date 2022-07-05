@@ -23,10 +23,10 @@ const createTaskHtml = (
   <br>
    <div class="row">
     <div class="col">
-      <a href="#" class="btn btn-primary">Delete</a>
+      <a href="#" class="btn btn-danger delete-button ml-5">Delete</a>
     </div>
     <div class="col">
-      <a href="#" class="btn btn-primary done-button ml-5">Done</a>
+      <a href="#" class="btn btn-success padding-right="100px" Update-button ml-5">Update</a>
     </div>
   </div>
 </div>
