@@ -12,16 +12,7 @@ const createTaskHtml = (
   <div class="card text-left mt-3" style="width: 18rem; box-shadow: 4px 4px ;" data-task-id=${id}>
 <div class="card-body">
   <h5 class="card-title">Name:  ${username}</h5>
-    <p class="card-subtitle mb-2 mt-1">Description:  ${descriptionBox}</p>
-     <h6 class="card-subtitle mb-2 mt-1">Due Date:  ${dueDate}</h6>
-    <h6 class="card-subtitle mb-2 mt-1" id="assignedToInput">Assignee:  ${assignedTo}</h6>
-    <h6 class="card-subtitle mb-2 mt-1">Status:  ${validateStatus}</h6>
-    <div class="row">
-    <div class="col mt-3">
-      <a href="#" class="btn btn-danger delete-button ml-3">Delete</a>
-    </div>
-    <div class="col mt-3">
-     <a href="#" class="btn btn-success done-button ${validateStatus == "Done" ? "d-none" : ""}">Mark as Done</a>
+
     </div>
   </div>
 </div>
@@ -64,6 +55,7 @@ class TaskManager {
       if (task.id === taskId) {
         objTask = task;
       }
+
     }
 
     return objTask;
@@ -120,4 +112,3 @@ class TaskManager {
       // const todolist = document.querySelector("#todo");
       // todolist.innerHTML = todoHTML;
     }
-  }
