@@ -77,7 +77,10 @@ class TaskManager {
   //Displaying Task function
 
   render() {
-    const tasksHtmlList = [];
+    const tasksHtmlListToDo = [];
+    const tasksHtmlListInProgress = [];
+    const tasksHtmlListReview = [];
+    const tasksHtmlListDone = [];
 
     for (let i = 0; i < this.tasks.length; i++) {
       const task = this.tasks[i];
@@ -95,12 +98,33 @@ class TaskManager {
         task.validateStatus
       );
 
-      tasksHtmlList.push(taskHtml);
+      //tasksHtmlList.push(taskHtml);
+
+      if (task.validateStatus === "To Do") {
+        tasksHtmlListToDo.push(taskHtml);
+      } else if (task.validateStatus === "In Progress") {
+        tasksHtmlListInProgress.push(taskHtml);
+      } else if (task.validateStatus === "Review") {
+        tasksHtmlListReview.push(taskHtml);
+      } else if (task.validateStatus === "Done") {
+        tasksHtmlListDone.push(taskHtml);
+      }
     }
 
-    const tasksHtml = tasksHtmlList.join("\n");
+    //const tasksHtml = tasksHtmlList.join("\n");
+    // const tasksList = document.getElementById("tasksList");
+    // tasksList.innerHTML = tasksHtml;
 
-    const tasksList = document.getElementById("tasksList");
-    tasksList.innerHTML = tasksHtml;
+    const toDoHtml = document.getElementById("to_do_tasks");
+    toDoHtml.innerHTML = tasksHtmlListToDo;
+
+    const inProgressHtml = document.getElementById("in_progress_tasks");
+    inProgressHtml.innerHTML = tasksHtmlListInProgress;
+
+    const reviewHtml = document.getElementById("review_tasks");
+    reviewHtml.innerHTML = tasksHtmlListReview;
+
+    const doneHtml = document.getElementById("done_tasks");
+    doneHtml.innerHTML = tasksHtmlListDone;
   }
 }
