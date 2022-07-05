@@ -21,7 +21,7 @@ const createTaskHtml = (
       <a href="#" class="btn btn-danger delete-button ml-3">Delete</a>
     </div>
     <div class="col mt-3">
-     <a href="#" class="btn btn-success done-button " id="Done">Mark as Done</a>
+     <a href="#" class="btn btn-success done-button ${validateStatus == "Done" ? "d-none" : ""}">Mark as Done</a>
     </div>
   </div>
 </div>
@@ -70,56 +70,54 @@ class TaskManager {
   }
 
   //Displaying Task function
-
-  render() {
-    const tasksHtmlListToDo = [];
-    const tasksHtmlListInProgress = [];
-    const tasksHtmlListReview = [];
-    const tasksHtmlListDone = [];
-
-    for (let i = 0; i < this.tasks.length; i++) {
-      const task = this.tasks[i];
-
-      const date = new Date(task.dueDate);
-      const formattedDate =
-        date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-
-      const taskHtml = createTaskHtml(
-        task.id,
-        task.username,
-        task.descriptionBox,
-        task.assignedTo,
-        formattedDate,
-        task.validateStatus
-      );
-
-      //tasksHtmlList.push(taskHtml);
-
-      if (task.validateStatus === "To Do") {
-        tasksHtmlListToDo.push(taskHtml);
-      } else if (task.validateStatus === "In Progress") {
-        tasksHtmlListInProgress.push(taskHtml);
-      } else if (task.validateStatus === "Review") {
-        tasksHtmlListReview.push(taskHtml);
-      } else if (task.validateStatus === "Done") {
-        tasksHtmlListDone.push(taskHtml);
+ 
+     render() {
+      let todo = [];
+      let review = [];
+      let inprogress = [];
+      let done = [];
+  
+      for (let i = 0; i < this.tasks.length; i++) {
+        const task = this.tasks[i];
+  
+        const date = new Date(task.dueDate);
+        const formattedDate =
+          date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+  
+        const taskHtml = createTaskHtml(
+          task.id,
+          task.username,
+          task.descriptionBox,
+          task.assignedTo,
+          formattedDate,
+          task.validateStatus
+        );
+        switch (task.validateStatus) {
+          case "To Do":
+            todo.push(taskHtml);
+            break;
+          case "In Progress":
+            inprogress.push(taskHtml);
+            break;
+          case "Review":
+            review.push(taskHtml);
+            break;
+          case "Done":
+            done.push(taskHtml);
+            break;
+          default:
+            console.error("Status not found");
+        }
       }
+      const todoHTML = todo.join("\n");
+      const reviewHTML = review.join("\n");
+      const inprogressHTML = inprogress.join("\n");
+      const doneHTML = done.join("\n");
+      document.querySelector("#todo").innerHTML = todoHTML;
+      document.querySelector("#review").innerHTML = reviewHTML;
+      document.querySelector("#inprog").innerHTML = inprogressHTML;
+      document.querySelector("#done").innerHTML = doneHTML;
+      // const todolist = document.querySelector("#todo");
+      // todolist.innerHTML = todoHTML;
     }
-
-    //const tasksHtml = tasksHtmlList.join("\n");
-    // const tasksList = document.getElementById("tasksList");
-    // tasksList.innerHTML = tasksHtml;
-
-    const toDoHtml = document.getElementById("to_do_tasks");
-    toDoHtml.innerHTML = tasksHtmlListToDo;
-
-    const inProgressHtml = document.getElementById("in_progress_tasks");
-    inProgressHtml.innerHTML = tasksHtmlListInProgress;
-
-    const reviewHtml = document.getElementById("review_tasks");
-    reviewHtml.innerHTML = tasksHtmlListReview;
-
-    const doneHtml = document.getElementById("done_tasks");
-    doneHtml.innerHTML = tasksHtmlListDone;
   }
-}

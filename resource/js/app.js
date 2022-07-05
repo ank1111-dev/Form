@@ -99,14 +99,38 @@ function toAddTasks() {
        
 }
 
-// Updating the task to done 
-const tasksList = document.getElementById('tasksList');
+/// Mark as Done
 
-// function closeButton() {
-//   document.getElementById('Done').style.display ="none";l
-// }
+let todolist = document.querySelector("#todo");
+let review = document.querySelector("#review");
+let inprogress = document.querySelector("#inprog");
+let done = document.querySelector("#done");
 
-tasksList.addEventListener('click', (event) => { 
+// click events!
+
+todolist.addEventListener("click", updateStatus);
+review.addEventListener("click", updateStatus);
+inprogress.addEventListener("click", updateStatus);
+done.addEventListener("click", updateStatus);
+
+//Function to mark status as done
+
+function updateStatus(event) {
+  
+  if (event.target.classList.contains("done-button")) {
+
+    const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
+    
+    const taskId = Number(parentTask.dataset.taskId);
+    
+    const task = taskManager.getTaskById(taskId);
+    
+    task.validateStatus = "Done";    
+    taskManager.render();
+    
+       
+  }
+}
 
     if(event.target.classList.contains('done-button')) {
       // Get the parent task
