@@ -9,24 +9,19 @@ const createTaskHtml = (
   validateStatus
 ) => {
   const newForm = ` 
-  <div class="card" style="width: 20rem; margin: 10%; box-shadow: 4px 4px ;" data-task-id=${id}>
+  <div class="card text-left mt-3" style="width: 18rem; box-shadow: 4px 4px ;" data-task-id=${id}>
 <div class="card-body">
   <h5 class="card-title">Name:  ${username}</h5>
-  <br>
-  <p class="card-subtitle mb-2">Description:  ${descriptionBox}</p>
-  <br>
-  <h6 class="card-subtitle mb-2">Due Date:  ${dueDate}</h6>
-  <br>
-  <h6 class="card-subtitle mb-2" id="assignedToInput">Assignee:  ${assignedTo}</h6>
-  <br>
-  <h6 class="card-subtitle mb-2">Status:  ${validateStatus}</h6>
-  <br>
-   <div class="row">
-    <div class="col">
-      <a href="#" class="btn btn-danger delete-button ml-5">Delete</a>
+    <p class="card-subtitle mb-2 mt-1">Description:  ${descriptionBox}</p>
+     <h6 class="card-subtitle mb-2 mt-1">Due Date:  ${dueDate}</h6>
+    <h6 class="card-subtitle mb-2 mt-1" id="assignedToInput">Assignee:  ${assignedTo}</h6>
+    <h6 class="card-subtitle mb-2 mt-1">Status:  ${validateStatus}</h6>
+    <div class="row">
+    <div class="col mt-3">
+      <a href="#" class="btn btn-danger delete-button ml-3">Delete</a>
     </div>
-    <div class="col">
-      <a href="#" class="btn btn-success padding-right="100px" Update-button ml-5">Update</a>
+    <div class="col mt-3">
+      <a href="#" class="btn btn-success padding-right="100px" Update-button ml-5">Mark as Done</a>
     </div>
   </div>
 </div>
