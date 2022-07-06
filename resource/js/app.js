@@ -132,21 +132,4 @@ function updateStatus(event) {
   }
 }
 
-    if(event.target.classList.contains('done-button')) {
-      // Get the parent task
-        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
-        
-        // Get the task id of the parent task
-        const taskId = Number(parentTask.dataset.taskId);
-        console.log(taskId)
-        //) Find the task that matches the parent task id
-        const task = taskManager.getTaskById(taskId);
-        
-         console.log(taskId)
-         console.log(event.target)
-        // Change the task status
-        task.validateStatus = 'DONE';   
-        taskManager.render();    
-             
-      }     
-    });     
+   
