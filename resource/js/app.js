@@ -136,6 +136,22 @@ function updateStatus(event) {
     taskManager.render();
          
   }
+
+  //Function to delete task in browser
+
+  if (event.target.classList.contains("delete-button")) {
+
+    if (confirm("Are you sure you want to delete this task?")) {
+      const parentTask =event.target.parentElement.parentElement.parentElement.parentElement;
+      const taskId = Number(parentTask.dataset.taskId);
+      taskManager.deleteTask(taskId);
+
+      //Save locally
+      taskManager.saveStorage();
+      //Display task
+      taskManager.render();
+      }
+  }
 }
 
 taskManager.saveStorage();
