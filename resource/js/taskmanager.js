@@ -120,6 +120,7 @@ class TaskManager {
       // const todolist = document.querySelector("#todo");
       // todolist.innerHTML = todoHTML;
     }
+
     //Saving the data in Local storage
     saveStorage() {
     
@@ -146,11 +147,19 @@ class TaskManager {
       }
     }
 
+    //Delete the task from local storage
 
-
-
-
-
-
-
+    deleteTask(taskId) {
+      const newTasks = [];
+      
+      for (let i = 0; i < this.tasks.length; i++) {
+        const task = this.tasks[i];
+  
+        if (task.id !== taskId) {
+          newTasks.push(task);
+          }
+  
+        }
+        this.tasks = newTasks;
+      }
   }
