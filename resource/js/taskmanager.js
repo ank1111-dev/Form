@@ -9,7 +9,7 @@ const createTaskHtml = (
   validateStatus
 ) => {
   const newForm = ` 
-  <div class="card text-left mt-3" style="width: 18rem; box-shadow: 4px 4px ;" data-task-id=${id}>
+  <div class="card text-left mx-3 mb-4 mt-3" style="width: 18rem; box-shadow: 4px 4px ;" data-task-id=${id}>
 <div class="card-body">
   <h5 class="card-title">Name:  ${username}</h5>
     <p class="card-subtitle mb-2 mt-1">Description:  ${descriptionBox}</p>
@@ -49,7 +49,7 @@ class TaskManager {
 
     this.tasks.push(task);
     console.log(
-      `$(task.id) \n $(task.username)\n $(task.descriptionBox)\n $(task.assignedTo)\n $(task.dueDate) \n $(task.validateStatus)`
+      `${task.id} \n ${task.username}\n ${task.descriptionBox}\n ${task.assignedTo}\n ${task.dueDate} \n ${task.validateStatus}`
     );
     return task;
   }
