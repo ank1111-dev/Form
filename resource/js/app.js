@@ -3,6 +3,9 @@
 let taskManager = new TaskManager(0);
 console.log(taskManager);
 
+//Loads data in local storage
+taskManager.loadStorage();
+
 //Getting the input values from Form 
 const form = document.getElementById('form');
 const username = document.getElementById('name');
@@ -75,7 +78,6 @@ let today =  new Date();
 form.addEventListener("submit",submitForm)
 
 
-
 //Displaying current date on landing page
 function currentDate () {
   const el = document.getElementById('date');
@@ -95,6 +97,7 @@ currentDate(); //Calling the current date function
 function toAddTasks() {
   
   taskManager.addTask(username.value, descriptionBox.value, assignedTo.value, dueDate.value, validateStatus.value);
+  taskManager.saveStorage();
   taskManager.render();
        
 }
@@ -126,9 +129,15 @@ function updateStatus(event) {
     const task = taskManager.getTaskById(taskId);
     
     task.validateStatus = "Done";    
-    taskManager.render();
     
-       
+    //Save locally
+    taskManager.saveStorage();
+    //Display task
+    taskManager.render();
+         
   }
 }
 
+taskManager.saveStorage();
+taskManager.render();
+  
