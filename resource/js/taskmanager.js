@@ -112,4 +112,3 @@ class TaskManager {
       // const todolist = document.querySelector("#todo");
       // todolist.innerHTML = todoHTML;
     }
-  }
