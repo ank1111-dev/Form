@@ -120,4 +120,37 @@ class TaskManager {
       // const todolist = document.querySelector("#todo");
       // todolist.innerHTML = todoHTML;
     }
+    //Saving the data in Local storage
+    saveStorage() {
+    
+      const tasksJson = JSON.stringify(this.tasks);
+      localStorage.setItem("tasks", tasksJson);
+  
+      const currentId = String(this.currentId);
+      localStorage.setItem("currentId", currentId);
+    }
+  
+    loadStorage() {
+      
+      let storageOutput = localStorage.getItem("tasks");
+      let storageId = localStorage.getItem("currentId");
+      
+      if (storageOutput) {
+        const tasksJson = localStorage.getItem("tasks");
+        this.tasks = JSON.parse(tasksJson);
+      }
+  
+      if (storageId) {
+        const currentId = localStorage.getItem("currentId");
+        this.currentId = Number(currentId);
+      }
+    }
+
+
+
+
+
+
+
+
   }
